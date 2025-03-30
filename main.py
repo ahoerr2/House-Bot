@@ -1,6 +1,5 @@
 import io
 import os
-import textwrap
 
 import discord
 from discord.ext import commands
@@ -239,9 +238,11 @@ async def activity_autocomplete(
     ][:25]  # Discord limits to 25 choices
 
 
-@bot.hybrid_command(name="image", description="Sends an image with custom text")
+@bot.hybrid_command(
+    name="titlecard", description="Sends a spongebob style titlecard with custom text"
+)
 @discord.app_commands.autocomplete(activity=activity_autocomplete)
-async def send_image(
+async def make_titlecard(
     ctx: commands.Context,
     activity: str = commands.parameter(description="Activity for housers to do"),
 ):
